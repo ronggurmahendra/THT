@@ -13,22 +13,7 @@ for contour in contours:
     x = approx.ravel()[0]
     y = approx.ravel()[1] - 5
     if len(approx) == 3:
-        cv2.putText(img, "Triangle", (x, y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
-    elif len(approx) == 4:
-        x1 ,y1, w, h = cv2.boundingRect(approx)
-        aspectRatio = float(w)/h
-        print(aspectRatio)
-        if aspectRatio >= 0.95 and aspectRatio <= 1.05:
-          cv2.putText(img, "square", (x, y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
-        else:
-          cv2.putText(img, "rectangle", (x, y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
-    elif len(approx) == 5:
-        cv2.putText(img, "Pentagon", (x, y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
-    elif len(approx) == 10:
-        cv2.putText(img, "Star", (x, y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
-    else:
         cv2.putText(img, "Circle", (x, y), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
-
 
 cv2.imshow("shapes", img)
 cv2.waitKey(0)
