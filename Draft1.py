@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-img = cv2.imread('Target Deteksi Objek ver. 1.0.1 (Aruco Kecil)-1.png')
+img = cv2.imread('shape.png')
 imgGrey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 _, thrash = cv2.threshold(imgGrey, 240, 255, cv2.THRESH_BINARY)
 contours, _ = cv2.findContours(thrash, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
